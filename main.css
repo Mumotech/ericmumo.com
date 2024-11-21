@@ -110,10 +110,10 @@ footer {
 
 @keyframes glitch {
     0% { text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; }
-    25% { text-shadow: -2px 2px #ff0000, 2px -2px #0000ff; }
-    50% { text-shadow: -2px -2px #ff0000, 2px 2px #0000ff; }
-    75% { text-shadow: 2px -2px #ff0000, -2px 2px #0000ff; }
-    100% { text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; }
+    25% { text-shadow: -2px 2px #ff0000, 2px -2px #fffc00; }
+    50% { text-shadow: -2px -2px #ff00a2, 2px 2px #0000ff; }
+    75% { text-shadow: 2px -2px #ff0000, -2px 2px #fffc00; }
+    100% { text-shadow: 2px 2px #00ff1e, -2px -2px #0000ff; }
     }
 }
 
