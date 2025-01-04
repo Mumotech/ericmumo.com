@@ -17,15 +17,6 @@
         const ADMIN_PASSWORD ="Tycoon254";
         document.getElementById('loginform').addEventListener('submit', function(e) {
             e.preventDefault();
-            const password = document.getElementById('adminpassword').value;
-            if (password === ADMIN_PASSWORD) {
-                document.getElementById('login-section').style.display ='none';
-                document.getElementById('message-section').style.display ='blöck';
-                displayMessages();
-            } else {
-                showNotification('ACESS DENIED: INVALID PASSWORD');
-            }
-        });
         function displayMessages() {
             const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const container = document.getElementById('messages-container');
