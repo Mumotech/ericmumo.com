@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Dashboard</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="matrix-overlay"></div>
+    <main>
+        <h1 class="glitch" data-text="Messages">Messages</h1>
+        <div id="messages-container" class="messages-grid"></div>
+    </main>
+
+    <script>
+        function displayMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            const container = document.getElementById('messages-container');
+            
+            container.innerHTML = messages.map(msg => `
+                <div class="message-card">
+                    <h3>${msg.name}</h3>
+                    <p>${msg.email}</p>
+                    <p>${msg.message}</p>
+                    <small>${msg.timestamp}</small>
+                </div>
+            `).join('');
+        }
+
+        // Update messages every 30 seconds
+        displayMessages();
+        setInterval(displayMessages, 30000);
+    </script>
+</body>
+</html>

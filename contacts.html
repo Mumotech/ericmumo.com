@@ -12,6 +12,7 @@
                 <li><a href="index.html">About</a></li>
                 <li><a href="skills.html">skills</a></li>
                 <li><a href="contacts.html">contacts</a></li>
+                <li><a href="admin.html">admin</a></li>
             </ul>
         </nav>
         <main>
@@ -30,5 +31,37 @@
                 <a href="https://www.linkedin.com/in/eric-mumo-37a160314" class="btn">LinkedIn</a>
             </ul>
         </main>
+        <script>
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Store message in localStorage
+                const message = {
+                    name: document.querySelector('input[type="text"]').value,
+                    email: document.querySelector('input[type="email"]').value,
+                    message: document.querySelector('textarea').value,
+                    timestamp: new Date().toLocaleString()
+                };
+                
+                let messages = JSON.parse(localStorage.getItem('messages')) || [];
+                messages.push(message);
+                localStorage.setItem('messages', JSON.stringify(messages));
+                
+                // Show notification
+                showNotification('Message received successfully!');
+                
+                // Clear form
+                this.reset();
+            });
+            
+            function showNotification(text) {
+                const notification = document.createElement('div');
+                notification.className = 'cyber-notification';
+                notification.textContent = text;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => notification.remove(), 3000);
+            }
+            </script>
     </body>
 </html>
