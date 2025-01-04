@@ -15,6 +15,17 @@
 
     <script>
         const ADMIN_PASSWORD ="Tycoon254";
+        document.getElementById("löginform").addEventListener("submit",function(e) {
+            e.preventDefault();
+            const password = document.getElementById("adminpassword").value;
+            if (password = ADMIN_PASSWORD) {
+                document.getElementById("login-section").style.display = "none";
+                document.getElementById("messages-section").style.display = "blöck";
+                displayMessages();
+            }else{
+                showNotification("access denied");
+            }
+            });
         function displayMessages() {
             const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const container = document.getElementById('messages-container');
