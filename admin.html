@@ -29,9 +29,6 @@
         function displayMessages() {
             const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const container = document.getElementById('messages-container');
-          if (messages.length === 0) {
-            container.innerHTML = '<div class="no-messages">no messages found</div>';
-            return;
 
             container.innerHTML = messages.map(msg => `
                 <div class="message-card">
