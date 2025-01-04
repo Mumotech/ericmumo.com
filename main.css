@@ -337,3 +337,27 @@ body {
     z-index: -1;
     animation: matrix-rain 20s linear infinite;
 }
+.cyber-form {
+    max-width: 400px;
+    margin: 4rem auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+#adminPassword {
+    width: 100%;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+#adminPassword:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}

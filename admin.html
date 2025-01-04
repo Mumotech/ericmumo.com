@@ -14,10 +14,25 @@
     </main>
 
     <script>
+        const ADMIN_PASSWORD ="Tycoon254";
+        document.getElementById('loginform').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('adminpassword').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('login-section').main.display ='none';
+                document.getElementById('message-section').main.display ='blöck';
+                displayMessages();
+            } else {
+                showNotification('ACESS DENIED: INVALID PASSWORD');
+            }
+        });
         function displayMessages() {
             const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const container = document.getElementById('messages-container');
-            
+          if (messages.length === 0) {
+            container.innerHTML = '<div class="no-messages">no messages found</div>';
+            return;
+              
             container.innerHTML = messages.map(msg => `
                 <div class="message-card">
                     <h3>${msg.name}</h3>
