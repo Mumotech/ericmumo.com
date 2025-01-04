@@ -19,8 +19,8 @@
             e.preventDefault();
             const password = document.getElementById('adminpassword').value;
             if (password === ADMIN_PASSWORD) {
-                document.getElementById('login-section').main.display ='none';
-                document.getElementById('message-section').main.display ='blöck';
+                document.getElementById('login-section').style.display ='none';
+                document.getElementById('message-section').style.display ='blöck';
                 displayMessages();
             } else {
                 showNotification('ACESS DENIED: INVALID PASSWORD');
@@ -32,7 +32,7 @@
           if (messages.length === 0) {
             container.innerHTML = '<div class="no-messages">no messages found</div>';
             return;
-              
+
             container.innerHTML = messages.map(msg => `
                 <div class="message-card">
                     <h3>${msg.name}</h3>
